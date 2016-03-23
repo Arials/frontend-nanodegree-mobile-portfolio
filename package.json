@@ -1,27 +1,18 @@
 {
   "name": "frontend-nanodegree-mobile-portfolio",
   "version": "1.0.0",
-  "description": "FrontEnd Course",
+  "description": "FrontEnd nanodegree",
   "main": "Gruntfile.js",
   "dependencies": {
     "grunt": "^0.4.5",
     "grunt-cli": "^1.1.0",
     "grunt-contrib-jshint": "^1.0.0",
     "grunt-contrib-watch": "^1.0.0",
-    "grunt-minify-html": "^2.0.0",
-    "grunt-pagespeed": "^2.0.0",
-    "load-grunt-tasks": "^3.4.1",
-    "ngrok": "^2.1.6"
+    "load-grunt-tasks": "^3.4.1"
   },
-  "devDependencies": {
-    "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-cssmin": "^1.0.1",
-    "grunt-contrib-htmlmin": "^1.1.0",
-    "grunt-contrib-uglify": "^1.0.1",
-    "grunt-pagespeed": "^2.0.0"
-  },
+  "devDependencies": {},
   "scripts": {
-    "test": "mocha"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
