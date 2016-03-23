@@ -1,12 +1,12 @@
-# Programs needed
-node (for use npm).
-Download and install from https://nodejs.org/en/download/
+# How to run the web
+1. Download and install node from https://nodejs.org/en/download/
+2. Dowload and install python from https://www.python.org/downloads/
+3. Install "ngrok" with npm: npm install -g ngrok
+4. With the prompt, go to the "*dist/*" folder and type: *python python -m SimpleHTTPServer 8080*
+5. In other prompt, go to the "*dist/*" folder and type: *ngrok http 8080*
+6. Now, you can enter the web page using *localhost:8080*, or the url made in nrgok (you can see it in your prompt) if you want to acces it from Internet.
 
-Follow this instructions to configure the programs:
-1. install node
-2. install ngrok: npm install ngrok -save-dev
-3. install grunt: npm install -g grunt-cli
-4. Install utility for make a Grunt.js: npm install -g grunt-init
-5. npm install grunt-pagespeed
-6. npm install load-grunt-tasks
-http://www.jamescryer.com/2014/06/12/grunt-pagespeed-and-ngrok-locally-testing/
+# How to set up grunt config
+The project has 2 files, *Gruntfile.js* with some automated tasks (css minify, html minify, js minify, js lint and copy files from src to dist folders) and *package.json* with the npm moduler required.
+In the root folder of the project, you can type "npm install" to install all dependencies needed.
+For launch the grunt tasks, only type *grunt* (the default task do everything).
