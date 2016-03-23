@@ -525,34 +525,40 @@ var resizePizzas = function(size) {
     return dx;
   }
 
+  // *******************************************************
+  // CHANGES HERE
+  // extract from "for" the querySelectorAll, this way it makes
+  // the selections once and not ever iteration in for loop
+  // *******************************************************
   // Iterates through pizza elements on the page and changes their widths
   // This functions take to much time
   function changePizzaSizes(size) {
-    for (var i = 0; i < document.querySelectorAll(".randomPizzaContainer").length; i++) {
-      var dx = determineDx(document.querySelectorAll(".randomPizzaContainer")[i], size);
-      var newwidth = (document.querySelectorAll(".randomPizzaContainer")[i].offsetWidth + dx) + 'px';
-      document.querySelectorAll(".randomPizzaContainer")[i].style.width = newwidth;
+    var select = document.querySelectorAll(".randomPizzaContainer");
+    var dx = determineDx(select[0], size);
+    var newwidth = (select[0].offsetWidth + dx) + 'px';
+    for (var i = 0; i < select.length; i++) {
+      select[i].style.width = newwidth;
     }
   }
-  window.performance.mark("mark_start_slider_label");
   changePizzaSizes(size);
-  window.performance.mark("mark_end_slider_label");
-  window.performance.measure("measure_slider_label", "mark_start_slider_label", "mark_end_slider_label");
 
   // User Timing API is awesome
   window.performance.mark("mark_end_resize");
   window.performance.measure("measure_pizza_resize", "mark_start_resize", "mark_end_resize");
   var timeToResize = window.performance.getEntriesByName("measure_pizza_resize");
-  var timeToLabel = window.performance.getEntriesByName("measure_slider_label");
   console.log("Time to resize pizzas: " + timeToResize[timeToResize.length-1].duration + "ms");
-  console.log("Time to resize labels: " + timeToLabel[timeToLabel.length-1].duration + "ms");
 };
 
 window.performance.mark("mark_start_generating"); // collect timing data
 
+// *******************************************************
+// CHANGES HERE
+// extract from "for" the getElementById, this way it makes
+// the selections once and not ever iteration in for loop
+// *******************************************************
 // This for-loop actually creates and appends all of the pizzas when the page loads
+var pizzasDiv = document.getElementById("randomPizzas");
 for (var i = 2; i < 100; i++) {
-  var pizzasDiv = document.getElementById("randomPizzas");
   pizzasDiv.appendChild(pizzaElementGenerator(i));
 }
 
