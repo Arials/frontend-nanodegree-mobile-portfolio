@@ -554,7 +554,7 @@ window.performance.mark("mark_start_generating"); // collect timing data
 // *******************************************************
 // CHANGES HERE
 // extract from "for" the getElementById, this way it makes
-// the selections once and not ever iteration in for loop
+// the selections once and not each iteration in for loop
 // *******************************************************
 // This for-loop actually creates and appends all of the pizzas when the page loads
 var pizzasDiv = document.getElementById("randomPizzas");
@@ -613,7 +613,7 @@ window.addEventListener('scroll', updatePositions);
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
-  for (var i = 0; i < 200; i++) {
+  for (var i = 0; i < 24; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";

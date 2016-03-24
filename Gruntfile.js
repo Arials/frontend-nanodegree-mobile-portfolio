@@ -27,7 +27,7 @@ module.exports = function(grunt) {
 		        collapseWhitespace: true
 		      },
 		      files: {                                   // Dictionary of files
-		        'dist/index.html': 'src/index.html',     // 'destination': 'source'
+		        'dist/index.html': 'dist/index.html',     // 'destination': 'source'
 		        'dist/project-2048.html': 'src/project-2048.html',
 		        'dist/project-mobile.html': 'src/project-mobile.html',
 		        'dist/project-webperf.html': 'src/project-webperf.html',
@@ -58,6 +58,7 @@ module.exports = function(grunt) {
 		      }
 		    }
 		}
+
 	});
 
 
@@ -69,6 +70,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
-	grunt.registerTask('default', ['copy', 'cssmin', 'htmlmin', 'uglify']);
+	grunt.registerTask('default', ['copy', 'cssmin', 'uglify', 'htmlmin']);
 	grunt.registerTask('jshint', ['jshint']);
 };
